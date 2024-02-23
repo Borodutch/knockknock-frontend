@@ -13,6 +13,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     env:
+      VITE_WALLET_CONNECT_PROJECT_ID: ${{secrets.VITE_WALLET_CONNECT_PROJECT_ID}}
+      VITE_ALCHEMY: ${{secrets.VITE_ALCHEMY}}
+      VITE_CONTRACT_ADDRESS: ${{secrets.VITE_CONTRACT_ADDRESS}}
       NODE_OPTIONS: '--max_old_space_size=4096'
     steps:
       - name: Checkout

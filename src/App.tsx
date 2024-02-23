@@ -1,13 +1,17 @@
-import { Suspense } from 'preact/compat'
-import UserCount from 'components/UserCount'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
+import Knock from 'components/Knock'
+import Wallet from 'components/Wallet'
 
 export default function () {
   return (
-    <div className="container mx-auto max-w-prose p-10 prose">
-      <h1>Frontend template</h1>
-      <Suspense fallback={<p>Loading...</p>}>
-        <UserCount />
-      </Suspense>
-    </div>
+    <Wallet>
+      <div className="container mx-auto max-w-prose p-10 prose">
+        <div className="flex flex-col gap-4">
+          <h1>knockknock</h1>
+          <ConnectButton />
+          <Knock />
+        </div>
+      </div>
+    </Wallet>
   )
 }
